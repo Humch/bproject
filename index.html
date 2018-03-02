@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BProject</title>
+    
+    <link rel="stylesheet" href="bproject.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Gloria+Hallelujah" rel="stylesheet">
+    
+</head>
+
+<body> 
+
+  <div class="container">
+    <div class="row justify-content-center mt-5 mb-5">
+        <div class="col">
+            <div class="row justify-content-center">
+                <div class="col-3"><h1 class="display-3 text-center text-audiowide"><a id="timer" class="text-white" href="#"><span id="clock-minutes">60</span></a></h1></div>
+                <div class="col-1"><h1 class="display-3 text-center text-audiowide"><a id="timer" class="text-white" href="#">:</a></h1></div>
+                <div class="col-3"><h1 class="display-3 text-center text-audiowide"><a id="timer" class="text-white" href="#"><span id="clock-seconds">00</span></a></h1></div>               
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-3">
+            <img src="img/skullhead.png" id="img-enigma-one" class="img-fluid rounded-circle red-bg" alt="Responsive image"  data-toggle="modal" data-target="#enigma-one">
+        </div>
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-3">
+            <img src="img/skullhead.png" class="img-fluid rounded-circle red-bg" alt="Responsive image">
+        </div>
+    </div>
+  </div>
+
+<!-- Enigma 1 -->
+    
+<div class="modal fade" id="enigma-one" tabindex="-1" role="dialog" aria-labelledby="enigma-one-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-gloria" id="enigma-one-label">Enigme 1</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form id="submit-enigma1">
+                <input id="answer-enigma-1" class="form-control form-control-lg">
+                <p id="bad-enigma-1" class="text-center text-gloria blink red-text"></p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="submit" class="btn btn-dark text-gloria">Valider</button>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="bproject.js"></script>
+
+</html>

@@ -1,0 +1,57 @@
+html { 
+  background:  url(img/anim-bg-wd.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+body {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.red-bg {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.green-bg {
+  background-color: green;
+  opacity: 0.8;
+}
+
+.text-audiowide {
+  font-family: 'Audiowide', cursive;
+}
+
+.text-gloria {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+a#timer:hover {
+  text-decoration: none;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
