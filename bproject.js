@@ -5,6 +5,14 @@ var seconds = 00;
 var milliseconds = 00;
 var startTimer = false;
 
+var answer = ["bob0","bob1","bob2","bob3","bob4","bob5","bob6","bob7"];
+
+var badAnswerText = ["Mauvaise réponse !! Essaie encore",
+                     "Ah c'est faux, tu peux mieux faire..."
+                     ];
+
+var goodAnswerText = ["Bonne réponse mais je ne suis pas vaincu !!!"];
+
 var el = document.getElementById("timer"); 
 el.addEventListener("click", manageTimer, false); 
 
@@ -36,64 +44,34 @@ function timer() {
     }
 }
 
- /* Enigma 1*/
+/* Enigma */
 
-var submitEnigma1 = document.getElementById("submit-enigma1");
-submitEnigma1.addEventListener("submit", enigmaOne, false);
+$( ".submit-enigma" ).submit(function() {
+    console.log("this is id :" + this.id);
+    enigma(this.id);
+});
 
-function goodAnswer1() {
-    $('#enigma-one').modal("hide")
-    var a = document.getElementById("img-enigma-one");
+function goodAnswer(id) {
+    $('#modal-enigma-' + id ).modal("hide");
+    var a = document.getElementById("img-enigma-" + id);
     a.classList.remove("red-bg");
         a.classList.add("green-bg");
         a.dataset.target = "";
 }
 
 
-function enigmaOne() {
-    console.log("pop");
-    var x = document.forms["submit-enigma1"]["answer-enigma-1"].value;
-    if (x != "bob") {
+function enigma(id) {
+    var x = document.forms[id]["answer-enigma-" + id].value;
+    if (x != answer[id]) {
         console.log("bah !!!");
-        var y = document.getElementById("bad-enigma-1");
-        y.innerText = "Mauvaise réponse !! Essaie encore";
+        var y = document.getElementById("bad-enigma-" + id);
+        y.innerText = badAnswerText[id];
     } else {
         console.log("youpi");
-        var z = document.getElementById("bad-enigma-1");
+        var z = document.getElementById("bad-enigma-" + id);
         z.classList.remove("red-text");
         z.classList.add("green-text");
-        z.innerText = "Bonne réponse mais je ne suis pas vaincu !!!";
-        window.setTimeout(goodAnswer1,3000);
-    }
-}
-
-/* Enigma 2*/
-
-var submitEnigma2 = document.getElementById("submit-enigma2");
-submitEnigma2.addEventListener("submit", enigmaTwo, false);
-
-function goodAnswer2() {
-    $('#enigma-two').modal("hide")
-    var a = document.getElementById("img-enigma-two");
-    a.classList.remove("red-bg");
-        a.classList.add("green-bg");
-        a.dataset.target = "";
-}
-
-
-function enigmaTwo() {
-    console.log("pop");
-    var x = document.forms["submit-enigma2"]["answer-enigma-2"].value;
-    if (x != "bob") {
-        console.log("bah !!!");
-        var y = document.getElementById("bad-enigma-2");
-        y.innerText = "Mauvaise réponse !! Essaie encore";
-    } else {
-        console.log("youpi");
-        var z = document.getElementById("bad-enigma-2");
-        z.classList.remove("red-text");
-        z.classList.add("green-text");
-        z.innerText = "Tu as gagné ce challenge !!!";
-        window.setTimeout(goodAnswer2,3000);
+        z.innerText = goodAnswerText[id];
+        window.setTimeout(function(){ return goodAnswer(id);},3000);
     }
 }
