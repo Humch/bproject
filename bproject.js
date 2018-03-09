@@ -5,16 +5,29 @@ var seconds = 00;
 var milliseconds = 00;
 var startTimer = false;
 
-var answer = ["bob0","bob1","bob2","bob3","bob4","bob5","bob6","bob7"];
+var answer = ["BOOM","DYNAMITE","JAUNE","TIC TAC","SPECTRAL","MOSCOU","MOLECULES","DESACTIVEE"];
 
 var badAnswerText = ["Mauvaise réponse !! Essaie encore",
-                     "Ah c'est faux, tu peux mieux faire..."
+                     "Ah c'est faux, tu peux mieux faire...",
+                     "Gniark Gniark Gniark",
+                     "Encore un agent de pacotille!!!"
                      ];
 
-var goodAnswerText = ["Bonne réponse mais je ne suis pas vaincu !!!"];
+var goodAnswerText = ["Bonne réponse mais je ne suis pas vaincu !!!",
+                      "Tu avances mais tu ne me battras pas !!!",
+                      "Tu es courageux mais ça ne suffira pas...",
+                      "Tu es fort mais la victoire sera à moi"
+                     ];
 
 var el = document.getElementById("timer"); 
 el.addEventListener("click", manageTimer, false); 
+
+function getRandom(a) {
+    
+    var rand = Math.floor(Math.random() * a.length);
+    
+    return rand;
+}
 
 function manageTimer() {
     console.log("moot!");
@@ -61,17 +74,19 @@ function goodAnswer(id) {
 
 
 function enigma(id) {
-    var x = document.forms[id]["answer-enigma-" + id].value;
-    if (x != answer[id]) {
+    var x = document.forms[id]["answer-enigma-" + id].value.toUpperCase();
+    if (x != answer[id].toUpperCase()) {
         console.log("bah !!!");
         var y = document.getElementById("bad-enigma-" + id);
-        y.innerText = badAnswerText[id];
+        y.innerText = badAnswerText[getRandom(badAnswerText)];
     } else {
         console.log("youpi");
         var z = document.getElementById("bad-enigma-" + id);
         z.classList.remove("red-text");
         z.classList.add("green-text");
-        z.innerText = goodAnswerText[id];
+        z.innerText = goodAnswerText[getRandom(goodAnswerText)];
         window.setTimeout(function(){ return goodAnswer(id);},3000);
     }
 }
+
+window.onload().requestFullscreen();
