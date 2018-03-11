@@ -4,6 +4,8 @@ var minutes = 60;
 var seconds = 00;
 var milliseconds = 00;
 var startTimer = false;
+var errors = 0;
+
 
 var answer = ["BOOM","DYNAMITE","JAUNE","TIC TAC","SPECTRAL","MOSCOU","MOLECULES","DESACTIVEE"];
 
@@ -79,6 +81,11 @@ function enigma(id) {
         console.log("bah !!!");
         var y = document.getElementById("bad-enigma-" + id);
         y.innerText = badAnswerText[getRandom(badAnswerText)];
+        errors++;
+        if (errors === 3) {
+            $('#modal-enigma-' + id ).modal("hide");
+            makeItBoom();
+        }
     } else {
         console.log("youpi");
         var z = document.getElementById("bad-enigma-" + id);
@@ -89,4 +96,7 @@ function enigma(id) {
     }
 }
 
-window.onload().requestFullscreen();
+function makeItBoom() {
+    console.log("BOOM !!!!")
+    $('#modal-boom' ).modal("show");
+}
